@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maplebrook Public Library | Catalog</title>
+
+    <script src="https://kit.fontawesome.com/9865d611ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<!-- ==================================================== -->
+<!-- * Original Content Notice:
+This website includes content, images and component code generated with ChatGPT-5.1 (OpenAI, 2025), including the book carousel functionality. -->
+<!-- ==================================================== -->
+<body>
+    <!-- HEADER START -->
+
+    <!-- Action menu bar -->
+    <div class="header-actions-bar">
+        <div class="container">
+            <a href="#">Get A Card</a>
+            <a href="#">Donate</a>
+            <a href="#">My Account</a>
+            <a href="#">Accessibility</a>
+        </div>
+    </div>
+
+    <!-- Main nav bar -->
+    <header class="header">
+
+        <div class="container header-inside">
+
+            <!-- Logo Nav -->
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <!-- Desktop navbar -->
+            <div class="header-nav">
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="visit.html" class="nav-link">Visit</a>
+                    <a href="catalog.html" class="nav-link">Books & Media</a>
+                    <a href="programs.html" class="nav-link">Programs & Events</a>
+                    <a href="about.html" class="nav-link">About & Contact</a>
+                </nav>
+            </div>
+
+            <!-- Hamburger Menu Icon -->
+            <i class="fa-solid fa-bars" id="hamburgerBtn"></i>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
+            <a href="books.html">Books & Media</a>
+            <a href="programs.html">Programs & Events</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </header>
+    <!-- HEADER END 
+     =============================================== -->
+
+    <!-- HERO START -->
+    <section class="hero hero-small">
+        <div class="container">
+            <h1>Books & Media</h1>
+            <p class="hero-sub">Search, explore, and discover your next great read.</p>
+        </div>
+    </section>
+    <!-- HERO END -->
+    <!-- ==================================================== -->
+
+    <!-- FILTER BAR START -->
+    <section class="search-filter">
+        <div class="container">
+            <div class="filter-grid">
+
+                <div class="select-wrap">
+                    <select>
+                        <option value="">All Categories</option>
+                        <option>Books</option>
+                        <option>Audiobooks</option>
+                        <option>Magazines</option>
+                        <option>Kids</option>
+                        <option>Teens</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
+
+                <div class="select-wrap">
+                    <select>
+                        <option value="">Sort By</option>
+                        <option>Most Popular</option>
+                        <option>Newest</option>
+                        <option>Staff Picks</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
+
+                <input type="text" placeholder="Search title, author, genre..." />
+
+                <button class="btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
+    <!-- FILTER BAR END -->
+    <!-- ==================================================== -->
+
+    <!-- CATEGORIES GRID START -->
+    <section class="catalog-categories">
+        <div class="container">
+            <h2>Browse by Category</h2>
+
+            <div class="catalog-grid">
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-books.png">
+                    </div>
+                    <h3>Books</h3>
+                </a>
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-audiobooks.png">
+                    </div>
+                    <h3>Audiobooks</h3>
+                </a>
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-magazine.png">
+                    </div>
+                    <h3>Magazines</h3>
+                </a>
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-ebooks.png">
+                    </div>
+                    <h3>eBooks</h3>
+                </a>
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-kids.png">
+                    </div>
+                    <h3>Kids</h3>
+                </a>
+
+                <a href="#" class="catalog-card">
+                    <div class="icon-circle">
+                        <img src="img/icons/catalog-teens.png">
+                    </div>
+                    <h3>Teens</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- CATEGORIES GRID END -->
+    <!-- ==================================================== -->
+
+    <!-- FEATURED CAROUSEL START -->
+    <section class="new-items">
+        <div class="container">
+            <h2>New Items</h2>
+
+            <!-- Book Carousel -->
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" aria-label="Previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel">
+                    <div class="carousel-track no-scrollbar">
+                        <!-- Book 1 -->
+                        <div class="book-card">
+                            <img src="img/books/book-1.png" alt="AI Superpowers Book Cover">
+                            <h3>AI Superpowers</h3>
+                            <p>Discover how China and Silicon Valley are shaping the future of artificial
+                                intelligence—and what it means for us all...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 2 -->
+                        <div class="book-card">
+                            <img src="img/books/book-2.png" alt="The Snow Child Book Cover">
+                            <h3>The Snow Child</h3>
+                            <p>Set in the Alaskan winter of 1920, a mysterious girl appears in the snow and changes
+                                a
+                                couple’s life forever...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 3 -->
+                        <div class="book-card">
+                            <img src="img/books/book-3.png" alt="Tomorrow, and Tomorrow, and Tomorrow Book Cover">
+                            <h3>Tomorrow, and Tomorrow, and Tomorrow</h3>
+                            <p>A captivating story about friendship, creativity, and the world of game design that
+                                spans
+                                decades...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 4 -->
+                        <div class="book-card">
+                            <img src="img/books/book-4.png" alt="The Creative Act: A Way of Being Book Cover">
+                            <h3>The Creative Act: A Way of Being</h3>
+                            <p>A philosophical and practical guide to unlocking creativity from one of the world’s
+                                most
+                                influential producers...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 5 -->
+                        <div class="book-card">
+                            <img src="img/books/book-5.png" alt="Lessons in Chemistry Book Cover">
+                            <h3>Lessons in Chemistry</h3>
+                            <p>Elizabeth Zott is not your typical scientist—and her bold ideas soon turn into a
+                                nationwide sensation...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 6 -->
+                        <div class="book-card">
+                            <img src="img/books/book-6.png" alt="The AI Revolution in Medicine Book Cover">
+                            <h3>The AI Revolution in Medicine</h3>
+                            <p>An eye-opening look at how AI is transforming diagnostics, treatment, and the patient
+                                experience...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 7 -->
+                        <div class="book-card">
+                            <img src="img/books/book-7.png" alt="Wintering: The Power of Rest and Retreat Book Cover">
+                            <h3>Wintering: The Power of Rest and Retreat</h3>
+                            <p>A gentle, reflective book about surviving life’s winters, both literal and emotional
+                                with
+                                grace...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 8 -->
+                        <div class="book-card">
+                            <img src="img/books/book-8.png" alt="The House in the Cerulean Sea Book Cover">
+                            <h3>The House in the Cerulean Sea</h3>
+                            <p>A magical, heartwarming tale of unexpected family, kindness, and hope in a world of
+                                unusual children...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 9 -->
+                        <div class="book-card">
+                            <img src="img/books/book-9.png" alt="The Maid Book Cover">
+                            <h3>The Maid</h3>
+                            <p>A charming mystery following Molly Gray, a hotel maid who becomes tangled in a murder
+                                investigation...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 10 -->
+                        <div class="book-card">
+                            <img src="img/books/book-10.png" alt="Klara and the Sun Book Cover">
+                            <h3>Klara and the Sun</h3>
+                            <p>Through the eyes of an artificial companion, explore love, loneliness, and what it
+                                means
+                                to be human...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- FEATURED CAROUSEL END -->
+    <!-- ==================================================== -->
+
+    <!-- ALL BOOKS SECTION START -->
+    <section class="books-list">
+        <div class="container">
+            <h2>All Books</h2>
+
+            <div class="book-grid book-grid-list">
+
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book1.png" alt="Atomic Habits Book Cover">
+                    <h3>Atomic Habits</h3>
+                    <p>A powerful blueprint for breaking bad habits and building better ones through tiny, science-backed changes that compound into big transformation.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book2.png" alt="The Mountain Is You Book Cover">
+                    <h3>The Mountain Is You</h3>
+                    <p>A reflective, emotional guide to understanding self-sabotage and turning your inner struggles into your greatest personal breakthroughs.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book3.png" alt="Deep Work Book Cover">
+                    <h3>Deep Work</h3>
+                    <p>A sharp, motivating look at how focused, distraction-free work can unlock next-level creativity, productivity, and mastery.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book4.png" alt="The Subtle Art of Not Giving a Fck Book Cover">
+                    <h3>The Subtle Art of Not Giving a Fck</h3>
+                    <p>Bold, funny, and brutally honest—this book rewrites what it means to live well by learning to care about less, but better.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book5.png" alt="The Psychology of Money Book Cover">
+                    <h3>The Psychology of Money</h3>
+                    <p>A timeless exploration of how emotions, habits, and human behavior shape financial success more than numbers ever will.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book6.png" alt="Quiet Book Cover">
+                    <h3>Quiet</h3>
+                    <p>A beautifully written celebration of introverts, showing how silence, depth, and reflection can be superpowers in a loud world.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book7.png" alt="The Creative Act: A Way of Being Book Cover">
+                    <h3>The Creative Act: A Way of Being</h3>
+                    <p>A poetic, soulful meditation on creativity, inspiration, and staying true to your artistic voice from one of the world’s most renowned producers.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book8.png" alt="Ikigai: The Japanese Secret to a Long and Happy Life Book Cover">
+                    <h3>Ikigai: The Japanese Secret to a Long and Happy Life</h3>
+                    <p>A gentle, uplifting guide to finding purpose and joy through balance, simplicity, and living with intention.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book4.png" alt="Think Again Book Cover">
+                    <h3>Think Again</h3>
+                    <p>A refreshing call to rethink what we know - embracing curiosity, flexibility, and intellectual humility in a constantly changing world.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="book-card">
+                    <img src="img/all-books/cata-book10.png" alt="Good Vibes, Good Life Book Cover">
+                    <h3>Good Vibes, Good Life</h3>
+                    <p>A modern, easy-to-read self-growth book that blends mindset shifts, self-love, and positive energy for building a life that feels lighter and happier.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+            </div>
+
+            <!-- PAGINATION START -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">→</a>
+            </div>
+            <!-- PAGINATION END -->
+            <!-- ==================================================== -->
+        </div>
+    </section>
+    <!-- ALL BOOKS SECTION END -->
+    <!-- ==================================================== -->
+    <!-- CTA SECTION START -->
+    <section class="cta-banner">
+        <h2>Contribute to our growing community</h2>
+        <p>Your support helps us build more programs, events, and learning opportunities for everyone.</p>
+        <button class="btn-primary">Donate</button>
+    </section>
+    <!-- CTA SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html">
+                <img class="footer-logo" src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Main Branch</h4>
+                <p>125 Maplebrook Ave</p>
+                <h4>Open hours</h4>
+                <p>Weekdays 9AM–8PM<br>Sat–Sun 10AM–5PM</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="catalog.html">Books & Media</a>
+                <a href="programs.html">Programs & Events</a>
+                <a href="visit.html">Visit the Library</a>
+                <a href="about.html">About & Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Subscribe to MPL Newsletter</h4>
+                <input type="email" placeholder="your-email@domain.com" />
+                <button class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Maplebrook Public Library. Designed by Quynh Nguyen for IMM Program Study</p>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+    <!-- ==================================================== -->
+
+    <!-- JAVASCRIPT LINK -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

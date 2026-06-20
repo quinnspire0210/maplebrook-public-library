@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maplebrook Public Library</title>
+
+    <script src="https://kit.fontawesome.com/9865d611ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<!-- ==================================================== -->
+<!-- * Original Content Notice:
+This website includes content, images and component code generated with ChatGPT-5.1 (OpenAI, 2025), including the book carousel functionality. -->
+<!-- ==================================================== -->
+
+<body>
+    <!-- HEADER START -->
+
+    <!-- Action menu bar -->
+    <div class="header-actions-bar">
+        <div class="container">
+            <a href="#">Get A Card</a>
+            <a href="#">Donate</a>
+            <a href="#">My Account</a>
+            <a href="#">Accessibility</a>
+        </div>
+    </div>
+
+    <!-- Main nav bar -->
+    <header class="header">
+
+        <div class="container header-inside">
+
+            <!-- Logo Nav -->
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <!-- Desktop navbar -->
+            <div class="header-nav">
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="visit.html" class="nav-link">Visit</a>
+                    <a href="catalog.html" class="nav-link">Books & Media</a>
+                    <a href="programs.html" class="nav-link">Programs & Events</a>
+                    <a href="about.html" class="nav-link">About & Contact</a>
+                </nav>
+            </div>
+
+            <!-- Hamburger Menu Icon -->
+            <i class="fa-solid fa-bars" id="hamburgerBtn"></i>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
+            <a href="books.html">Books & Media</a>
+            <a href="programs.html">Programs & Events</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </header>
+    <!-- HEADER END 
+     =============================================== -->
+
+    <!-- HERO SECTION START -->
+    <section class="hero">
+        <div class="container">
+            <h1>Explore the world of knowledge</h1>
+            <p>Welcome to the Maplebrook Public Library (MPL), your place to learn, discover, and connect.</p>
+        </div>
+    </section>
+    <!-- HERO SECTION END -->
+
+    <!-- SEARCH & FILTER SECTION START -->
+    <section class="search-filter">
+        <div class="container filter-grid">
+
+            <!-- Filter 1 -->
+            <div class="select-wrap">
+                <select>
+                    <option>Format</option>
+                    <option>Books</option>
+                    <option>eBooks</option>
+                    <option>AudioBooks</option>
+                    <option>Magazines</option>
+                    <option>Videos</option>
+                    <option>Music</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+
+            <!-- Filter 2 -->
+            <div class="select-wrap">
+                <select>
+                    <option>Search by</option>
+                    <option>Title</option>
+                    <option>Author</option>
+                    <option>Category</option>
+                    <option>Year</option>
+                    <option>Language</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-icon"></i>
+            </div>
+
+            <!-- Search Bar -->
+            <input type="text" placeholder="Search the catalog...">
+            <button class="btn-primary">Search</button>
+        </div>
+    </section>
+    <!-- SEARCH & FILTER SECTION END -->
+
+    <!-- DISCOVER THE LIBRARY SECTION START -->
+    <section class="discover-library">
+        <div class="container">
+            <h2>Discover the Library</h2>
+
+            <div class="discover-grid">
+
+                <a class="discover-item" href="#">
+                    <div class="icon-circle">
+                        <img src="img/icons/member.png" alt="">
+                    </div>
+                    <p class="category-tag">Register</p>
+                    <h3>Get a Library Card</h3>
+                </a>
+
+                <a class="discover-item" href="catalog.html">
+                    <div class="icon-circle">
+                        <img src="img/icons/book-media.png" alt="">
+                    </div>
+                    <p class="category-tag">Directory</p>
+                    <h3>Books & Media</h3>
+                </a>
+
+                <a class="discover-item" href="programs.html">
+                    <div class="icon-circle">
+                        <img src="img/icons/programs-events.png" alt="">
+                    </div>
+                    <p class="category-tag">Directory</p>
+                    <h3>Programs & Events</h3>
+                </a>
+
+                <a class="discover-item" href="visit.html">
+                    <div class="icon-circle">
+                        <img src="img/icons/use-library.png" alt="">
+                    </div>
+                    <p class="category-tag">Directory</p>
+                    <h3>Visit the Library</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- ITEMS GRID END -->
+
+    <!-- ==================================================== -->
+    <!-- * Original Content notice: 
+     This part - Carousel of books images code and functioning are generated by chatgpt-5.1(openAI, 2025) -->
+    <!-- ==================================================== -->
+
+    <!-- NEW ITEMS SECTION START -->
+    <section class="new-items">
+        <div class="container">
+            <h2>New Items</h2>
+
+            <!-- Book Carousel -->
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" aria-label="Previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel">
+                    <div class="carousel-track no-scrollbar">
+                        <!-- Book 1 -->
+                        <div class="book-card">
+                            <img src="img/books/book-1.png" alt="AI Superpowers Book Cover">
+                            <h3>AI Superpowers</h3>
+                            <p>Discover how China and Silicon Valley are shaping the future of artificial
+                                intelligence—and what it means for us all...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 2 -->
+                        <div class="book-card">
+                            <img src="img/books/book-2.png" alt="The Snow Child Book Cover">
+                            <h3>The Snow Child</h3>
+                            <p>Set in the Alaskan winter of 1920, a mysterious girl appears in the snow and changes
+                                a
+                                couple’s life forever...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 3 -->
+                        <div class="book-card">
+                            <img src="img/books/book-3.png" alt="Tomorrow, and Tomorrow, and Tomorrow Book Cover">
+                            <h3>Tomorrow, and Tomorrow, and Tomorrow</h3>
+                            <p>A captivating story about friendship, creativity, and the world of game design that
+                                spans
+                                decades...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 4 -->
+                        <div class="book-card">
+                            <img src="img/books/book-4.png" alt="The Creative Act: A Way of Being Book Cover">
+                            <h3>The Creative Act: A Way of Being</h3>
+                            <p>A philosophical and practical guide to unlocking creativity from one of the world’s
+                                most
+                                influential producers...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 5 -->
+                        <div class="book-card">
+                            <img src="img/books/book-5.png" alt="Lessons in Chemistry Book Cover">
+                            <h3>Lessons in Chemistry</h3>
+                            <p>Elizabeth Zott is not your typical scientist—and her bold ideas soon turn into a
+                                nationwide sensation...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 6 -->
+                        <div class="book-card">
+                            <img src="img/books/book-6.png" alt="The AI Revolution in Medicine Book Cover">
+                            <h3>The AI Revolution in Medicine</h3>
+                            <p>An eye-opening look at how AI is transforming diagnostics, treatment, and the patient
+                                experience...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 7 -->
+                        <div class="book-card">
+                            <img src="img/books/book-7.png" alt="Wintering: The Power of Rest and Retreat Book Cover">
+                            <h3>Wintering: The Power of Rest and Retreat</h3>
+                            <p>A gentle, reflective book about surviving life’s winters, both literal and emotional
+                                with
+                                grace...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 8 -->
+                        <div class="book-card">
+                            <img src="img/books/book-8.png" alt="The House in the Cerulean Sea Book Cover">
+                            <h3>The House in the Cerulean Sea</h3>
+                            <p>A magical, heartwarming tale of unexpected family, kindness, and hope in a world of
+                                unusual children...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 9 -->
+                        <div class="book-card">
+                            <img src="img/books/book-9.png" alt="The Maid Book Cover">
+                            <h3>The Maid</h3>
+                            <p>A charming mystery following Molly Gray, a hotel maid who becomes tangled in a murder
+                                investigation...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+
+                        <!-- Book 10 -->
+                        <div class="book-card">
+                            <img src="img/books/book-10.png" alt="Klara and the Sun Book Cover">
+                            <h3>Klara and the Sun</h3>
+                            <p>Through the eyes of an artificial companion, explore love, loneliness, and what it
+                                means
+                                to be human...</p>
+                            <button class="btn-more">Read More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- NEW ITEMS SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- BOOKS RECOMMENDATION SECTION START -->
+    <section class="books-recommend">
+        <div class="container">
+            <h2>Books We Recommend This Month</h2>
+            <div class="book-grid">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <img src="img/books/book-rcm-1.png" alt="The Perfectionist’s Guide to Losing Control Book Cover">
+                    <h3>The Perfectionist’s Guide to Losing Control</h3>
+                    <p>A modern, empowering take on perfectionism helping readers harness ambition, prevent burnout,
+                        and
+                        live with more balance and compassion.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <img src="img/books/book-rcm-2.png" alt="The Psychology of Money Book Cover">
+                    <h3>The Psychology of Money</h3>
+                    <p>A timeless, highly popular book exploring how human behavior shapes financial
+                        decisions-clear,
+                        insightful, and perfect for readers of any age.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <img src="img/books/book-rcm-3.png" alt="Remarkably Bright Creatures Book Cover">
+                    <h3>Remarkably Bright Creatures</h3>
+                    <p>DA heartwarming, quirky story about an unlikely friendship between a grieving woman and a
+                        wise
+                        giant Pacific octopus—loved by book clubs everywhere.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <img src="img/books/book-rcm-4.png" alt="Remarkably Bright Creatures Book Cover">
+                    <h3>Build the Life You Want</h3>
+                    <p>A powerful, uplifting guide that blends science, psychology, and practical wisdom to help readers
+                        design a happier, more meaningful life.</p>
+                    <button class="btn-more">Read More</button>
+                </div>
+
+            </div>
+            <a href="catalog.html">
+            <button class="btn-secondary">View All Books</button>
+            </a>
+        </div>
+    </section>
+    <!-- BOOKS RECOMMENDATION SECTION END -->
+    <!-- ==================================================== -->
+    <!-- UPCOMING PROGRAMS & EVENTS SECTION START -->
+    <section class="programs">
+        <div class="container">
+            <h2>Upcoming Programs & Events</h2>
+
+            <div class="programs-grid">
+
+                <!-- Program Item 1 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-1.jpg" alt="Tech Help for Seniors">
+                    </div>
+                    <h3>Tech Help for Seniors</h3>
+                    <p class="program-time">Tuesday, 2:00 PM</p>
+                    <p>Learn the basics of smartphones, email, and online safety.</p>
+                </a>
+
+                <!-- Program Item 2 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-2.jpg" alt="Children’s Storytime">
+                    </div>
+                    <h3>Children’s Storytime</h3>
+                    <p class="program-time">Thursday, 10:00 AM</p>
+                    <p>A fun, interactive reading program for young learners.</p>
+                </a>
+
+                <!-- Program Item 3 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-3.jpg" alt="Creative Writing Workshop">
+                    </div>
+                    <h3>Creative Writing Workshop</h3>
+                    <p class="program-time">Saturday, 1:00 PM</p>
+                    <p>Explore storytelling techniques with our guest author.</p>
+                </a>
+
+                <!-- Program Item 4 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-4.jpg" alt="Art & Painting Workshop">
+                    </div>
+                    <h3>Art & Painting Workshop</h3>
+                    <p class="program-time">Wednesday, 3:30 PM</p>
+                    <p>Discover color, form, and simple painting techniques in this hands-on art session.</p>
+                </a>
+
+                <!-- Program Item 5 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-5.jpg" alt="Local History Talk">
+                    </div>
+                    <h3>Local History Talk</h3>
+                    <p class="program-time">Friday, 4:00 PM</p>
+                    <p>Join our historian for an engaging session uncovering Maplebrook’s past.</p>
+                </a>
+
+                <!-- Program Item 6 -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-6.jpg" alt="Beginner Coding for Kids">
+                    </div>
+                    <h3>Beginner Coding for Kids</h3>
+                    <p class="program-time">Sunday, 11:00 AM</p>
+                    <p>Learn basic programming and problem-solving skills.</p>
+                </a>
+            </div>
+            <a href="programs.html">
+            <button class="btn-secondary">View All Programs</button>
+            </a>
+        </div>
+    </section>
+    <!-- UPCOMING PROGRAMS & EVENTS SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- CTA BANNER START -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Contribute to the growth of our Community</h2>
+            <p>Your support helps us continue providing free resources, programs, and learning opportunities.</p>
+            <button class="btn-primary">Donate</button>
+        </div>
+    </section>
+    <!-- CTA BANNER END -->
+    <!-- ==================================================== -->
+
+    <!-- FAQ START -->
+    <section class="faq">
+        <div class="container faq-layout">
+
+            <!-- Left Image -->
+            <div class="faq-image">
+                <img src="img/faq.jpg" alt="FAQ Image - A girl holding books and smiling in a library">
+            </div>
+
+            <!-- Right Content -->
+            <div class="faq-content">
+                <h3>Frequently Asked Questions</h3>
+
+                <div class="faq-item accordion">
+                    <button class="accordion-header">
+                        How do I apply for a library card?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>You can apply online or visit any Maplebrook Library branch with a valid ID and proof of
+                            address.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item accordion">
+                    <button class="accordion-header">
+                        Can I borrow eBooks or audiobooks online?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Yes! Use the MPL Digital Library app to borrow eBooks, audiobooks, and magazines for free.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item accordion">
+                    <button class="accordion-header">
+                        What programs are available for children and teens?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>We offer weekly storytime, STEM workshops, after-school clubs, and seasonal events for all
+                            ages.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- FAQ END -->
+
+    <!-- ==================================================== -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html">
+                <img class="footer-logo" src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Main Branch</h4>
+                <p>125 Maplebrook Ave</p>
+                <h4>Open hours</h4>
+                <p>Weekdays 9AM–8PM<br>Sat–Sun 10AM–5PM</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="catalog.html">Books & Media</a>
+                <a href="programs.html">Programs & Events</a>
+                <a href="visit.html">Visit the Library</a>
+                <a href="about.html">About & Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Subscribe to MPL Newsletter</h4>
+                <input type="email" placeholder="your-email@domain.com" />
+                <button class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Maplebrook Public Library. Designed by Quynh Nguyen for IMM Program Study</p>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+    <!-- ==================================================== -->
+
+    <!-- JAVASCRIPT LINK -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

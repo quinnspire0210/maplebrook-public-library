@@ -1,0 +1,2066 @@
+/* <!-- ==================================================== -->
+<!-- * Original Content Notice:
+This website includes content, images and component code generated with ChatGPT-5.1 (OpenAI, 2025), including the book carousel functionality. -->
+<!-- ==================================================== --> */
+
+/* -------------------------------------------------------------
+FONT IMPORT
+-------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* -------------------------------------------------------------- */
+/* FONT AND COLOUR REFERENCE */
+/* -------------------------------------------------------------
+
+1. FONTS
+/* 
+Headings: 'Bitter', serif;
+Body / UI: 'Inter', sans-serif;
+*/
+
+/* 2. COLOURS */
+/*
+Teal (Primary): #1a415d
+Teal Light: #2ea5ad
+Orange Accent: #d15626
+Gray 100: #F5F5F5
+Gray 200: #E5E5E5
+Gray 600: #555555
+Black: #111111
+White: #ffffff
+*/
+
+/* FONT & COLOURS VARIABLES */
+:root {
+    --font-heading: 'Bitter', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --teal: #1a415d;
+    --teal-light: #2ea5ad;
+    --orange: #d15626;
+    --gray-100: #F5F5F5;
+    --gray-200: #E5E5E5;
+    --gray-600: #555;
+    --black: #111;
+    --white: #fff;
+
+    --radius: 10px;
+    --transition: 0.3s ease;
+}
+
+/* -------------------------------------------------------------
+GLOBAL STYLES
+-------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Global Section Spacing */
+section {
+    padding: 3rem 0;
+}
+@media only screen and (max-width: 480px) {
+    section {
+        padding: 2rem 0;
+    }
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--teal-light);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--teal);
+    color: var(--white);
+}
+
+.btn-more {
+    background: transparent;
+    color: var(--teal-light);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    padding-left: 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-more:hover {
+    color: var(--orange);
+}
+
+.btn-more::after {
+    content: " →";
+    font-size: 1.05rem;
+    margin-left: 4px;
+    transition: var(--transition);
+}
+
+.btn-more:hover::after {
+    margin-left: 8px;
+}
+
+
+/* -------------------------------------------------------------
+HEADER
+-------------------------------------------------------------- */
+
+/* Header action bar (top)
+--------------- */
+
+.header-actions-bar {
+    background: var(--teal-light);
+    color: var(--white);
+    padding: 0.5rem 0;
+    height: 38px;
+}
+
+.header-actions-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.header-actions-bar a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Header main nav bar
+--------------- */
+
+.header {
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.6rem 0; 
+    min-height: 40px;
+}
+
+.header-inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+}
+
+.logo img {
+    width: 165px;
+}
+
+/* NAV container */
+.header-nav {
+    width: 100%;
+    background: var(--teal);
+}
+
+.nav-desktop {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.55rem 1rem;
+}
+
+/* Nav links */
+.nav-desktop .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.nav-desktop .nav-link:hover {
+    background: var(--teal-light);
+    transform: translateY(-2px);
+}
+
+/* Hamburger icon (mobile) */
+#hamburgerBtn {
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding-right: 0.25rem;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--teal);
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-menu a {
+    padding: 0.75rem 0rem;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    font-size: 1rem;
+    transition: 0.25s ease;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu a:hover {
+    background: var(--teal-light);
+    transform: translateX(6px);
+    padding: 0.75rem 0.75rem;
+    border-radius: var(--radius);
+}
+
+/* -------------------------------------------------------------
+Media queries
+-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+
+    #hamburgerBtn {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .nav-desktop {
+        display: flex;
+    }
+
+    .header {
+        min-height: 60px;
+        padding: 1rem 0;
+    }
+
+    .header-inside {
+        min-height: 60px;
+    }
+
+    .logo img {
+        width: 170px;
+    }
+
+    .header-actions-bar .container {
+        gap: 2rem;
+    }
+}
+
+/* Sticky header effect */
+.header,
+.header-actions-bar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+/* =============================================================================== */
+/* HOMEPAGE STARTS */
+/* =============================================================================== */
+
+/* -------------------------------------------------------------
+HERO HOMEPAGE
+-------------------------------------------------------------- */
+
+.hero {
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 0 7rem 0;
+
+    background-image: url(../img/home-cover.jpg);
+
+    background-color: var(--black);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* -------------------------------------------------------------
+SEARCH FILTER
+-------------------------------------------------------------- */
+
+.search-filter {
+    position: relative;
+    margin-top: -3.5rem;
+    z-index: 5;
+    padding: 0;
+}
+
+.filter-grid {
+    background: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    display: grid;
+    gap: 1rem;
+}
+
+.filter-grid select,
+.filter-grid input {
+    padding: 0.75rem;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+}
+
+.filter-grid button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* select */
+.select-wrap {
+    position: relative;
+}
+
+.filter-grid select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.5rem;
+}
+
+.filter-grid input {
+    padding: 0.75rem;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+}
+
+.filter-grid button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.select-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    pointer-events: none;
+}
+
+/* -------------------------------------------------------------
+Media queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+
+    .filter-grid {
+        grid-template-columns: 
+            minmax(140px, 1fr)
+            minmax(140px, 1fr)
+            2.5fr
+            auto;
+        align-items: center;
+    }
+
+    .filter-grid button {
+        width: auto;
+        white-space: nowrap;
+    }
+}
+
+/* -------------------------------------------------------------
+DISCOVER THE LIBRARY
+-------------------------------------------------------------- */
+
+.discover-library h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--teal);
+    text-align: center;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.discover-item {
+    width: 100%;
+    text-align: center;
+    background: var(--white);
+    padding: 0.9rem 0.55rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--teal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.icon-circle {
+    width: 64px;
+    height: 64px;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.icon-circle img {
+    width: 32px; 
+    height: 32px;
+}
+
+.category-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--teal);
+}
+
+.discover-item h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin: 0;
+    line-height: 1.35;
+}
+/* Hover effects */
+.discover-item:hover {
+    background: var(--gray-200);
+    transform: translateY(-4px);
+}
+
+/* Media Queries for Discover Section */
+
+@media only screen and (min-width: 768px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .discover-item {
+        padding: 1.25rem 0.85rem;
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon-circle img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .discover-item h3 {
+        font-size: 1.2rem;
+    }
+}
+/* <!-- ==================================================== -->
+    <!-- * Original Content notice: 
+     The part below - Carousel of books images code and functioning are coded with the help of Chatgpt-5.1(openAI, 2025) -->
+    <!-- ==================================================== --> */
+
+/* -------------------------------------------------------------
+NEW ITEMS - CAROUSEL
+-------------------------------------------------------------- */
+
+.new-items {
+    background: var(--gray-100);
+    padding: 3rem 0;
+}
+.new-items h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+}
+
+/* Wrapper */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Arrows */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 5;
+}
+
+.carousel-btn.prev { left: 0.25rem; }
+.carousel-btn.next { right: 0.25rem; }
+
+/* Full-width expansion */
+.carousel {
+    overflow: hidden;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+    }
+}
+
+/* Fade effect */
+.carousel::before,
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--gray-100), rgba(245,245,245,0));
+}
+
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--gray-100), rgba(245,245,245,0));
+}
+
+/* Track */
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    transition: var(--transition);
+    padding: 0 2rem;
+}
+
+/* Book item */
+.book-card {
+    min-width: 230px;
+    max-width: 230px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+.book-card img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+}
+.book-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.book-card p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+/* -------------------------------------------------------------
+BOOKS WE RECOMMEND
+-------------------------------------------------------------- */
+
+.books-recommend h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 2rem;
+}
+.book-grid img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.book-grid h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.5rem 0;  
+}
+
+.books-recommend .btn-secondary {
+    display: block;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+}
+
+/* Mobile first */
+.book-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+    .book-grid {
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+}
+
+
+/* -------------------------------------------------------------
+PROGRAMS & EVENTS
+-------------------------------------------------------------- */
+
+.programs h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 2rem;
+}
+
+.programs-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.program-item h3 {
+    font-size: 1.25rem;
+    margin: 0.75rem 0 0.35rem 0;
+    color: var(--teal);
+}
+
+.program-time {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.program-img img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.program-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.programs .btn-secondary {
+    display: block;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+}
+
+/* Hover effect for program cards */
+.program-item:hover h3 {
+    color: var(--teal-light);
+}
+
+.program-item:hover .program-img img {
+    transform: scale(1.03);
+}
+
+/* Smooth image zoom */
+.program-img img {
+    transition: transform 0.3s ease;
+}
+
+
+/* -------------------------------------------------------------
+CTA BANNER
+-------------------------------------------------------------- */
+
+.cta-banner {
+    text-align: center;
+    height: 50vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--teal);
+    background-image: url(../img/contribute-cta.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--white);
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-banner p {
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+}
+
+.cta-banner .btn-primary {
+    background-color: var(--teal-light);
+    font-size: 1.1rem;
+    padding: 0.9rem 1.8rem;
+}
+
+.cta-banner .btn-primary:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+/* -------------------------------------------------------------
+FAQ SECTION
+-------------------------------------------------------------- */
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* Image */
+.faq-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+/* Heading */
+.faq-content h3 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 1.25rem;
+}
+
+/* Space between items */
+.faq-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Accordion container */
+.faq-item.accordion {
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* Accordion header */
+.accordion-header {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    color: var(--teal-light);
+}
+
+/* Icon */
+.accordion-icon {
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+/* Accordion body */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.accordion-body p {
+    margin: 1rem 0;
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+/* OPEN STATE */
+.accordion.open .accordion-body {
+    max-height: 300px;
+    padding: 0 1.25rem 1rem 1.25rem;
+}
+
+.accordion.open .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .faq-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------------------------------
+FOOTER
+-------------------------------------------------------------- */
+
+.footer {
+    background: var(--teal);
+    color: var(--white);
+    padding: 4rem 0;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* Footer logo */
+.footer-logo {
+    width: 160px;
+    margin-bottom: 1rem;
+}
+
+/* Column headings */
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+}
+
+/* Footer text */
+.footer-col p {
+    color: var(--gray-200);
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    transition: var(--transition);
+}
+
+.footer-col p:hover {
+    color: var(--teal-light);
+}
+
+/* Footer links */
+.footer-col a {
+    display: block;
+    margin: 0.35rem 0;
+    color: var(--gray-200);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col a:hover {
+    color: var(--teal-light);
+    padding-left: 4px;
+}
+
+/* Subscribe input style */
+.footer-col input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    color: var(--black);
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+}
+
+.footer-col input[type="email"]:focus {
+    border-color: var(--teal-light);
+    outline: none;
+}
+
+.footer-col .btn-primary {
+    color: var(--white);
+    background: var(--teal-light);
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.footer-col .btn-primary:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .footer-col .btn-primary {
+        width: fit-content;
+    }
+}
+
+/* Footer bottom copyright line */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--gray-200);
+    opacity: 80%;
+    transition: var(--transition);
+}
+
+.footer-bottom p:hover {
+    color: var(--teal-light);
+}
+
+
+/* -------------------------------------------------------------
+MEDIA QUERIES (TABLET & DESKTOP)
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+
+    .nav-desktop {
+        display: flex;
+    }
+
+    .header-actions .fa-bars {
+        display: none;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .faq-layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* HOMEPAGE END */
+/* --- */
+
+/* =============================================================================== */
+/* VISIT PAGE STARTS */
+/* =============================================================================== */
+
+/* -------------------------------------------------------------
+HERO VISIT PAGE
+-------------------------------------------------------------- */
+
+.visit-hero {
+    text-align: center;
+    padding: 5rem 0 6rem 0;
+    background: var(--teal);
+    background-image: url(../img/visit-cover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+}
+
+.visit-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.visit-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+/* -------------------------------------------------------------
+VISIT INTRO SECTION
+-------------------------------------------------------------- */
+/* Intro */
+.visit-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.visit-intro-content h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.visit-intro-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Image */
+.visit-intro-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+/* Desktop layout */
+@media only screen and (min-width: 768px) {
+    .visit-intro-layout {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* -------------------------------------------------------------
+LIBRARY BRANCHES
+-------------------------------------------------------------- */
+
+.branches-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 2.5rem;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Branch Card */
+.branch-card {
+    background: var(--gray-100);
+    padding: 2rem 1.75rem;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.branch-card:hover {
+    background: var(--gray-200);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+/* Title */
+.branch-card h3 {
+    font-size: 1.35rem;
+    color: var(--teal);
+    margin-bottom: -1rem;
+}
+
+/* Address */
+.branch-card .address {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal-light);
+    margin-bottom: 1rem;
+}
+
+/* Description */
+.branch-card .desc {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Amenities Icons */
+.branch-amenities {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    color: var(--teal-light);
+}
+
+.branch-amenities i {
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.branch-card:hover .branch-amenities i {
+    color: var(--orange);
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .branches-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* -------------------------------------------------------------
+HOURS OF OPERATION
+-------------------------------------------------------------- */
+
+/* Hours table */
+.hours-table {
+    margin-top: 1.5rem;
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    padding: 4rem;
+    overflow: hidden;
+}
+
+.hours-table h3 {
+    font-size: 1.5rem;
+    color: var(--teal);
+    margin-bottom: 2rem;
+}
+
+.hours-table .hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Map embed */
+.map-wrapper {
+    margin-top: 1.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+/* Services */
+.visit-services .discover-grid {
+    margin-top: 2rem;
+}
+/* VISIT PAGE END */
+/* ------- */
+
+/* =============================================================================== */
+/* CATALOG PAGE STARTS */
+/* =============================================================================== */
+
+/* -------------------------------------------------------------
+CATALOG – HERO SMALL
+-------------------------------------------------------------- */
+
+.hero-small {
+    background: var(--teal);
+    background-image: url('../img/catalog-cover.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 0 6rem 0;
+}
+
+.hero-small h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-small .hero-sub {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* -------------------------------------------------------------
+CATALOG – CATEGORY GRID
+-------------------------------------------------------------- */
+
+.catalog-categories h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.catalog-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.catalog-card {
+    width: 100%;
+    max-width: 240px;
+    background: var(--white);
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--teal);
+    transition: var(--transition);
+}
+
+.catalog-card .icon-circle {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 0.75rem auto;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.catalog-card:hover {
+    transform: translateY(-4px);
+    background: var(--gray-200);
+}
+
+
+/* Tablet */
+@media (min-width: 600px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .catalog-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
+/* -------------------------------------------------------------
+CATALOG – ALL BOOK LISTING
+-------------------------------------------------------------- */
+
+.books-list h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.book-grid-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+    .book-grid-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .book-grid-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* -------------------------------------------------------------
+CATALOG – PAGINATION
+-------------------------------------------------------------- */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 2.5rem 0 0 0;
+}
+
+.pagination a {
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    color: var(--teal);
+    font-weight: 600;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.pagination a:hover {
+    background: var(--teal-light);
+    color: var(--white);
+}
+
+.pagination a.active {
+    background: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+}
+
+/* CATALOG PAGE END */
+/* ------- */
+
+/* =============================================================================== */
+/* PROGRAMS PAGE STARTS */
+/* =============================================================================== */
+
+/* -------------------------------------------------------------
+PROGRAMS PAGE – FILTER
+-------------------------------------------------------------- */
+
+.event-filter {
+    margin-top: -3.5rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+    z-index: 5;
+    position: relative;
+}
+
+.event-filter-grid {
+    grid-template-columns: 
+        minmax(140px, 1fr)
+        minmax(140px, 1fr)
+        2.5fr
+        auto;
+}
+
+@media (max-width: 768px) {
+    .event-filter-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* -------------------------------------------------------------
+PROGRAMS INTRO
+-------------------------------------------------------------- */
+
+.programs-hero {
+    text-align: center;
+    padding: 5rem 0 6rem 0;
+    background: var(--teal);
+    background-image: url(../img/programs-cover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+}
+
+.programs-intro {
+    padding: 4rem 0;
+}
+
+.programs-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.programs-intro h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.programs-intro p {
+    margin: 0 0 1rem 0;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.programs-intro img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .programs-intro-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------------------------------
+MINI CALENDAR STRIP
+-------------------------------------------------------------- */
+
+.mini-calendar {
+    padding: 3.5rem 0;
+    text-align: center;
+}
+
+.mini-calendar h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 2rem;
+}
+
+/* Horizontal date strip */
+.calendar-strip {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.calendar-day {
+    text-decoration: none;
+    color: var(--teal);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    width: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.calendar-day:hover {
+    background-color: var(--gray-100);
+    border-color: var(--teal-light);
+    transform: translateY(-3px);
+}
+
+/* Day text */
+.calendar-day .day {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 0.25rem;
+}
+
+/* Date number */
+.calendar-day .date {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Dot indicating event */
+.calendar-day .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 0.4rem;
+}
+
+/* Only show the dot when there is event */
+.calendar-day:not(.has-event) .dot {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .calendar-day {
+        width: 70px;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* -------------------------------------------------------------
+PROGRAM LIST
+-------------------------------------------------------------- */
+
+.program-list h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 2rem;
+}
+
+.programs-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hover effects */
+.program-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: var(--transition);
+}
+
+.program-item:hover h3 {
+    color: var(--teal-light);
+}
+
+.program-item:hover .program-img img {
+    transform: scale(1.03);
+}
+
+.program-img img {
+    width: 100%;
+    border-radius: var(--radius);
+    transition: transform 0.3s ease;
+}
+
+.program-item h3 {
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+    color: var(--teal);
+}
+
+.program-time {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+}
+
+.pagination a {
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    color: var(--teal);
+    font-weight: 600;
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.pagination a:hover {
+    background: var(--teal-light);
+    color: var(--white);
+}
+
+.pagination a.active {
+    background: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+}
+
+/* -------------------------------------------------------------
+PROGRAMS CTA BANNER
+-------------------------------------------------------------- */
+
+.programs-cta {
+    height: 50vh;
+    min-height: 320px;
+
+    background-image: url("../img/programs-cta.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    margin-top: 4rem;
+}
+
+.programs-cta h2 {
+    color: var(--white);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.programs-cta p {
+    color: var(--white);
+    margin: 0 auto 1.5rem auto;
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+.programs-cta .cta-btn {
+    background: var(--teal-light);
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+}
+
+.programs-cta .cta-btn:hover {
+    background: var(--orange);
+}
+
+/* -------------------------------------------------------------
+EVENT HIGHLIGHTS / COMMUNITY MOMENTS
+-------------------------------------------------------------- */
+
+.event-highlights h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.highlight-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Grid */
+.highlights-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Highlight card */
+.highlight-item {
+    text-align: center;
+}
+
+.highlight-img {
+    width: 100%;
+    height: 220px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.highlight-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.highlight-item h3 {
+    font-size: 1.2rem;
+    color: var(--teal);
+    margin-bottom: 0.35rem;
+}
+
+.highlight-item p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+/* Hover effects */
+.highlight-item:hover .highlight-img img {
+    transform: scale(1.05);
+}
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+    .highlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .highlight-img {
+        height: 260px;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+    .highlight-img {
+        height: 280px;
+    }
+}
+
+/* PROGRAMS PAGE END */
+/* ------- */
+
+/* =============================================================================== */
+/* ABOUT AND CONTACT PAGES STARTS */
+/* =============================================================================== */
+
+/* Page header */
+.about-hero {
+    background-color: var(--teal);
+    background-image: url(../img/about-cover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 30vh;
+
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+.about-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* ABOUT SECTION */
+/* ------------------------------------------------------------------------------ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+/* ------------------------------------------------------------------------------ */
+/* MISSION SECTION */
+/* ------------------------------------------------------------------------------ */
+.mission {
+    padding: 4rem 0;
+    background: var(--gray-100);
+}
+.mission h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.mission-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--gray-600);
+}
+
+/* 3 columns grid */
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.mission-item h3 {
+    font-size: 1.25rem;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+}
+
+.mission-item p {
+    color: var(--gray-600);
+    line-height: 1.55;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 768px) {
+    .mission-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* CONTACT SECTION */
+/* ------------------------------------------------------------------------------ */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-600);
+}
+
+.contact-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--teal);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+}
+
+.contact-info h3 {
+    font-size: 1.25rem;
+    color: var(--teal);
+    margin-bottom: 0.35rem;
+}
+
+.contact-info p {
+    color: var(--gray-600);
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Responsive */
+
+@media (max-width: 768px) {
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        order: -1;
+    }
+}
+/* OUR TEAM */
+.our-team {
+    padding: 4rem 0;
+}
+
+.our-team h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.team-intro {
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 1rem;
+}
+
+/* Grid layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+/* Team card */
+.team-card {
+    max-width: 280px;
+    text-align: center;
+}
+
+.team-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.team-card h3 {
+    font-size: 1.25rem;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+}
+
+.team-card .role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--teal-light);
+    margin-bottom: 0.5rem;
+}
+
+.team-card .bio {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.55;
+}
+
+/* Desktop 3 columns */
+@media (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+/* ABOUT AND CONTACT PAGES END */
+/* ------- */

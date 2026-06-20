@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maplebrook Public Library | Programs & Events</title>
+
+    <script src="https://kit.fontawesome.com/9865d611ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<!-- ==================================================== -->
+<!-- * Original Content Notice:
+This website includes content, images and component code generated with ChatGPT-5.1 (OpenAI, 2025), including the book carousel functionality. -->
+<!-- ==================================================== -->
+<body>
+    <!-- HEADER START -->
+
+    <!-- Action menu bar -->
+    <div class="header-actions-bar">
+        <div class="container">
+            <a href="#">Get A Card</a>
+            <a href="#">Donate</a>
+            <a href="#">My Account</a>
+            <a href="#">Accessibility</a>
+        </div>
+    </div>
+
+    <!-- Main nav bar -->
+    <header class="header">
+
+        <div class="container header-inside">
+
+            <!-- Logo Nav -->
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <!-- Desktop navbar -->
+            <div class="header-nav">
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="visit.html" class="nav-link">Visit</a>
+                    <a href="catalog.html" class="nav-link">Books & Media</a>
+                    <a href="programs.html" class="nav-link">Programs & Events</a>
+                    <a href="about.html" class="nav-link">About & Contact</a>
+                </nav>
+            </div>
+
+            <!-- Hamburger Menu Icon -->
+            <i class="fa-solid fa-bars" id="hamburgerBtn"></i>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
+            <a href="books.html">Books & Media</a>
+            <a href="programs.html">Programs & Events</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </header>
+    <!-- HEADER END 
+     =============================================== -->
+
+    <!-- HERO SMALL -->
+    <section class="programs-hero">
+        <h1>Programs & Events</h1>
+        <p class="hero-sub">Workshops, classes, storytimes, and community events</p>
+    </section>
+
+    <!-- FILTER SECTION START -->
+    <section class="event-filter">
+        <div class="container">
+            <div class="filter-grid event-filter-grid">
+
+                <!-- Category -->
+                <div class="select-wrap">
+                    <select>
+                        <option>All Categories</option>
+                        <option>Children</option>
+                        <option>Teens</option>
+                        <option>Adults</option>
+                        <option>Technology</option>
+                        <option>Workshops</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
+
+                <!-- Day -->
+                <div class="select-wrap">
+                    <select>
+                        <option>Any Day</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
+
+                <!-- Search -->
+                <input type="text" placeholder="Search events..." />
+
+                <!-- Button -->
+                <button class="btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
+    <!-- FILTER SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- PROGRAMS INTRO SECTION START -->
+    <section class="programs-intro">
+        <div class="container programs-intro-grid">
+
+            <div class="intro-text">
+                <h2>Connecting Community Through Learning In Maplebrook</h2>
+                <p>
+                    At Maplebrook Public Library, our programs and events are thoughtfully
+                    designed to support learning, creativity, and community connection.
+                    From weekly storytimes and tech-help sessions to creative workshops
+                    and cultural events, each program is crafted with purpose.
+                </p>
+                <p>
+                    Our librarians work closely with local educators, artists, and
+                    community leaders to ensure our offerings support every age group —
+                    children, teens, adults, and seniors. Whether you want to learn
+                    something new, meet new people, or simply enjoy a meaningful activity,
+                    we welcome you to explore what’s happening this month.
+                </p>
+            </div>
+
+            <div class="intro-image">
+                <img src="img/programs-intro.jpg" alt="People attending a library workshop">
+            </div>
+
+        </div>
+    </section>
+    <!-- PROGRAMS INTRO SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- MINI CALENDAR SECTION START -->
+    <section class="mini-calendar">
+        <div class="container">
+            <h2>This Week at MPL</h2>
+
+            <div class="calendar-strip">
+
+                <a href="#" class="calendar-day has-event">
+                    <span class="day">Mon</span>
+                    <span class="date">02</span>
+                    <span class="dot"></span>
+                </a>
+
+                <a href="#" class="calendar-day">
+                    <span class="day">Tue</span>
+                    <span class="date">03</span>
+                </a>
+
+                <a href="#" class="calendar-day has-event">
+                    <span class="day">Wed</span>
+                    <span class="date">04</span>
+                    <span class="dot"></span>
+                </a>
+
+                <a href="#" class="calendar-day">
+                    <span class="day">Thu</span>
+                    <span class="date">05</span>
+                </a>
+
+                <a href="#" class="calendar-day">
+                    <span class="day">Fri</span>
+                    <span class="date">06</span>
+                </a>
+
+                <a href="#" class="calendar-day has-event">
+                    <span class="day">Sat</span>
+                    <span class="date">07</span>
+                    <span class="dot"></span>
+                </a>
+
+                <a href="#" class="calendar-day">
+                    <span class="day">Sun</span>
+                    <span class="date">08</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- MINI CALENDAR SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- PROGRAM LIST SECTION START -->
+    <section class="program-list">
+        <div class="container">
+
+            <h2>Upcoming Events</h2>
+
+            <div class="programs-grid">
+
+                <!-- Item -->
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-1.jpg" alt="">
+                    </div>
+                    <h3>Tech Help for Seniors</h3>
+                    <p class="program-time">Tuesday • 2:00 PM</p>
+                    <p>Learn the basics of smartphones, email, and online safety.</p>
+                </a>
+
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-2.jpg" alt="">
+                    </div>
+                    <h3>Children’s Storytime</h3>
+                    <p class="program-time">Thursday • 10:00 AM</p>
+                    <p>A fun, interactive reading program for young learners.</p>
+                </a>
+
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-3.jpg" alt="">
+                    </div>
+                    <h3>Creative Writing Workshop</h3>
+                    <p class="program-time">Saturday • 1:00 PM</p>
+                    <p>Explore storytelling techniques with our guest author.</p>
+                </a>
+
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-4.jpg" alt="">
+                    </div>
+                    <h3>Art & Painting Workshop</h3>
+                    <p class="program-time">Wednesday • 3:30 PM</p>
+                    <p>Discover color and composition through guided painting activities.</p>
+                </a>
+
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-5.jpg" alt="">
+                    </div>
+                    <h3>Local History Talk</h3>
+                    <p class="program-time">Friday • 4:00 PM</p>
+                    <p>Join our historian for stories and archival photos of Maplebrook.</p>
+                </a>
+
+                <a href="#" class="program-item">
+                    <div class="program-img">
+                        <img src="img/programs/program-6.jpg" alt="">
+                    </div>
+                    <h3>Beginner Coding for Kids</h3>
+                    <p class="program-time">Sunday • 11:00 AM</p>
+                    <p>Learn the basics of programming in a fun, kid-friendly format.</p>
+                </a>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">›</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- PROGRAM LIST SECTION END -->
+    <!-- ==================================================== -->
+
+    <!-- PROGRAMS CTA FULL-WIDTH BANNER START -->
+    <section class="programs-cta">
+        <div class="cta-overlay">
+            <h2>Want to Volunteer or Help Organize Events?</h2>
+            <p>
+                Join our community team and make an impact by supporting library programs,
+                workshops, and special events throughout the year.
+            </p>
+            <a href="contact.html" class="btn-primary cta-btn">Contact Us</a>
+        </div>
+    </section>
+    <!-- PROGRAMS CTA FULL-WIDTH BANNER END -->
+    <!-- ==================================================== -->
+
+    <!-- EVENT HIGHLIGHTS START -->
+    <section class="event-highlights">
+        <div class="container">
+            <h2>Community Moments at MPL</h2>
+            <p class="highlight-intro">
+                From creative workshops to family gatherings, every week at MPL is filled
+                with meaningful connections and memorable experiences.
+            </p>
+
+            <div class="highlights-grid">
+
+                <!-- Highlight 1 -->
+                <div class="highlight-item">
+                    <div class="highlight-img">
+                        <img src="img/programs-highlight-1.jpg" alt="Kids reading together">
+                    </div>
+                    <h3>Storytime Magic</h3>
+                    <p>Families gather every Thursday to share laughter, imagination, and the joy of reading.</p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="highlight-item">
+                    <div class="highlight-img">
+                        <img src="img/programs-highlight-2.jpg" alt="Art workshop">
+                    </div>
+                    <h3>Creative Afternoons</h3>
+                    <p>Our art sessions bring out bold ideas and colorful moments for all ages.</p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="highlight-item">
+                    <div class="highlight-img">
+                        <img src="img/programs-highlight-3.jpg" alt="Tech workshop">
+                    </div>
+                    <h3>Learning Together</h3>
+                    <p>From tech help for seniors to STEM workshops, knowledge is shared and celebrated.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- EVENT HIGHLIGHTS END -->
+    <!-- ==================================================== -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html">
+                <img class="footer-logo" src="img/logo.png" alt="Maplebrook Public Library Logo">
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Main Branch</h4>
+                <p>125 Maplebrook Ave</p>
+                <h4>Open hours</h4>
+                <p>Weekdays 9AM–8PM<br>Sat–Sun 10AM–5PM</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="catalog.html">Books & Media</a>
+                <a href="programs.html">Programs & Events</a>
+                <a href="visit.html">Visit the Library</a>
+                <a href="about.html">About & Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Subscribe to MPL Newsletter</h4>
+                <input type="email" placeholder="your-email@domain.com" />
+                <button class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Maplebrook Public Library. Designed by Quynh Nguyen for IMM Program Study</p>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+    <!-- ==================================================== -->
+
+    <!-- JAVASCRIPT LINK -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
